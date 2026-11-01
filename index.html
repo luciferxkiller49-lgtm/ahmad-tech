@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Ahmad Tech | WhatsApp Bot Pairing Code Gateway &amp; MD Bot Hub</title>
+  <meta name="title" content="Ahmad Tech | WhatsApp Bot Pairing Code Gateway &amp; MD Bot Hub">
+  <meta name="description" content="Generate instant WhatsApp 8-digit pairing codes for Baileys, Mini Bots, and MD Bots with Ahmad Tech. Ultra-low latency multi-server infrastructure, zero QR code scanning, and comprehensive bot deployment guides.">
+  <meta name="keywords" content="Ahmad Tech, ahmadtech.site, WhatsApp Bot, WhatsApp Pairing Code, Baileys, WhatsApp MD Bot, WhatsApp Mini Bot, Bot Deployment, Multi-Device Pairing, Node.js Bot, WhatsApp Automation">
+  <meta name="author" content="Ahmad Tech">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://ahmadtech.site/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ahmadtech.site/">
+  <meta property="og:site_name" content="Ahmad Tech - WhatsApp Bot Gateway">
+  <meta property="og:title" content="Ahmad Tech | WhatsApp Bot Pairing Code Gateway &amp; MD Bot Hub">
+  <meta property="og:description" content="Connect and deploy your WhatsApp bot without scanning QR codes. Fast multi-region server pairing, Baileys MD architecture, and production tutorials.">
+  <meta property="og:image" content="https://ahmadtech.site/assets/images/og-banner.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ahmadtech.site/">
+  <meta name="twitter:title" content="Ahmad Tech | WhatsApp Bot Pairing Code Gateway &amp; MD Bot Hub">
+  <meta name="twitter:description" content="Instant WhatsApp pairing code deployment panel with zero QR code scanning. Complete guides for Mini Bot &amp; MD Bot developers.">
+  <meta name="twitter:image" content="https://ahmadtech.site/assets/images/og-banner.svg">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/panel.css">
+  <link rel="stylesheet" href="assets/css/guides.css">
+
+  <!-- Structured Data (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://ahmadtech.site/#website",
+        "url": "https://ahmadtech.site/",
+        "name": "Ahmad Tech",
+        "description": "WhatsApp Bot Pairing Code Gateway, Mini Bot & MD Bot Documentation",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://ahmadtech.site/#software",
+        "name": "Ahmad Tech WhatsApp Bot Pairing Console",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Developer utility to generate secure 8-digit multi-device pairing codes for WhatsApp bot deployment."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ahmadtech.site/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does WhatsApp Pairing Code work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "WhatsApp Pairing Code connects your bot via Baileys Multi-Device protocol by providing an 8-character verification token on your phone under Linked Devices > Link with phone number instead of scanning a QR code."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a Mini Bot and an MD Bot?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A WhatsApp Mini Bot is a lightweight instance designed for micro-tasks and low memory environments, while an MD Bot (Multi-Device Bot) runs full socket handlers supporting complex plugins, audio/video converters, and interactive menu systems."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header class="site-header" id="topHeader">
+    <div class="container header-inner">
+      <!-- Branding -->
+      <a href="index.html" class="brand-wrap" aria-label="Ahmad Tech Home">
+        <img src="assets/images/logo.svg" alt="Ahmad Tech Logo" class="brand-logo-img">
+        <span class="brand-badge"><span class="pulse-dot"></span> Node Mesh 99.9%</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary Site Navigation">
+        <a href="#pairingPanel" class="nav-link active">Deployment Panel</a>
+        <a href="#botGuide" class="nav-link">WhatsApp Bot Guide</a>
+        <a href="#miniMdGuide" class="nav-link">Mini &amp; MD Bot Guide</a>
+        <a href="#features" class="nav-link">Infrastructure</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Switch theme mode">
+          <i class="fas fa-sun"></i>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#pairingPanel" class="btn-header-cta">
+          <i class="fas fa-key"></i>
+          <span>Get Pair Code</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation drawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Body Content -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-glow-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-pill">
+          <i class="fas fa-bolt"></i>
+          <span>High-Speed WhatsApp MD Pairing Engine</span>
+        </div>
+
+        <h1 class="hero-title">
+          Professional WhatsApp Bot <br>
+          <span class="text-gradient">Pairing &amp; Automation Hub</span>
+        </h1>
+
+        <p class="hero-lead">
+          Generate secure 8-digit Baileys multi-device pairing codes in seconds without scanning QR codes. 
+          Connect your custom bots, mini bots, and automation servers with carrier-grade cluster reliability.
+        </p>
+
+        <div class="hero-badges-row">
+          <span class="feature-pill"><i class="fas fa-check-circle"></i> No QR Scan Required</span>
+          <span class="feature-pill"><i class="fas fa-server"></i> 4 Global Cloud Clusters</span>
+          <span class="feature-pill"><i class="fas fa-shield-alt"></i> Baileys MD Protocol</span>
+          <span class="feature-pill"><i class="fas fa-code"></i> Ready for Node.js &amp; Python</span>
+        </div>
+
+        <!-- Live Metrics Strip -->
+        <div class="stats-banner">
+          <div class="stat-item">
+            <div class="stat-number text-gradient">24ms</div>
+            <div class="stat-label">Avg. Cluster Latency</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">99.98%</div>
+            <div class="stat-label">Gateway Uptime</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number text-gradient">Multi-Device</div>
+            <div class="stat-label">Baileys Support</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Zero</div>
+            <div class="stat-label">Camera Dependency</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: WhatsApp Bot Pairing Code Deployment Panel -->
+    <section class="pairing-panel-section" id="pairingPanel">
+      <div class="container">
+        <div class="panel-container-card">
+
+          <!-- Panel Header -->
+          <div class="panel-header">
+            <div class="panel-title-badge">
+              <i class="fab fa-whatsapp"></i>
+              <span>Live Pairing Console</span>
+            </div>
+            <h2 class="panel-title">WhatsApp Bot Pairing Code Gateway</h2>
+            <p class="panel-subtitle">
+              Select your preferred gateway server, enter your WhatsApp phone number with international dial code, and receive your 8-character pairing code.
+            </p>
+          </div>
+
+          <!-- Server Selection Display Ribbon (Requirement 5) -->
+          <div class="server-bar-wrap">
+            <div class="server-current-card" id="selectedServerCard">
+              <div class="server-current-left">
+                <div class="server-badge-icon-wrap">
+                  <i class="server-badge-icon fas fa-bolt"></i>
+                </div>
+                <div class="server-info-col">
+                  <div class="server-title-row">
+                    <span class="server-current-name">Server 01 - US East (Virginia)</span>
+                    <span class="server-status-pill"><span class="pulse-dot"></span> Active</span>
+                  </div>
+                  <div class="server-meta-row">
+                    <span class="server-meta-item"><i class="fas fa-globe-americas"></i> <span class="server-current-region">North America</span></span>
+                    <span class="server-meta-item"><i class="fas fa-signal"></i> Ping: <strong class="server-current-ping live-ping-val" data-base="28">28 ms</strong></span>
+                    <span class="server-meta-item"><i class="fas fa-microchip"></i> Node Load: <strong class="server-current-load">22%</strong></span>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn-change-server" id="btnChangeServer" aria-haspopup="dialog">
+                <i class="fas fa-exchange-alt"></i>
+                <span>Switch Server</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Pairing Form -->
+          <form id="pairingForm" novalidate>
+            <!-- WhatsApp Phone Input with Country Code (Requirement 6) -->
+            <div class="form-input-section">
+              <div class="form-label-row">
+                <label for="phoneInput" class="form-label">
+                  <i class="fab fa-whatsapp text-success"></i> WhatsApp Phone Number
+                </label>
+                <span class="form-label-badge">International Format</span>
+              </div>
+
+              <div class="phone-input-combo">
+                <!-- Country Code Selector -->
+                <div class="select-country-wrap">
+                  <select id="countryCodeSelect" class="country-select-dropdown" aria-label="Select Country Dial Code">
+                    <!-- Populated dynamically via config.js -->
+                  </select>
+                  <i class="fas fa-chevron-down select-arrow"></i>
+                </div>
+
+                <!-- Number Input -->
+                <div class="phone-input-field-wrap">
+                  <i class="fas fa-phone-alt phone-icon-prefix"></i>
+                  <input 
+                    type="tel" 
+                    id="phoneInput" 
+                    class="phone-number-input" 
+                    placeholder="e.g. 3001234567" 
+                    inputmode="numeric" 
+                    autocomplete="tel-national" 
+                    required
+                  >
+                </div>
+              </div>
+              <small id="phoneHelp" class="form-input-help text-muted">
+                Enter WhatsApp number without leading zeros or punctuation (e.g. for +1 415 555 2671 enter 4155552671).
+              </small>
+            </div>
+
+            <!-- Generate Button (Requirement 7) -->
+            <div class="generate-action-row">
+              <button type="submit" id="btnGenerateCode" class="btn-generate-code">
+                <i class="fas fa-key"></i>
+                <span>Generate Pairing Code</span>
+              </button>
+
+              <!-- Progress Indicator -->
+              <div class="generation-progress-box" id="generationProgress">
+                <div class="progress-info-row">
+                  <span id="progressStatusText">Connecting to gateway node...</span>
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill" id="progressBarFill"></div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <!-- Pairing Code Display Box (Requirement 8) -->
+          <div class="pairing-code-section">
+            <div class="code-box-header">
+              <span class="code-box-title">
+                <i class="fas fa-terminal"></i> 8-Digit Pairing Code Display
+              </span>
+              <div class="code-timer-badge" id="expiryTimerWrapper">
+                <i class="fas fa-stopwatch"></i>
+                <span>Expires in: <strong id="expirySeconds">60s</strong></span>
+              </div>
+            </div>
+
+            <div class="pairing-code-box state-empty" id="pairingCodeBox">
+              <div class="code-placeholder" id="codePlaceholder">
+                <span>• • • •  —  • • • •</span>
+              </div>
+              <div class="code-digits-display" id="codeDigits">
+                <!-- Dynamically populated with generated code -->
+              </div>
+            </div>
+
+            <!-- Expiry Progress Bar -->
+            <div class="timer-bar-wrap">
+              <div class="timer-bar-fill" id="timerProgressBar"></div>
+            </div>
+
+            <!-- Code Action & Copy Button (Requirement 9) -->
+            <div class="code-action-row">
+              <p class="code-instruction-hint">
+                <i class="fas fa-info-circle"></i>
+                <span>Open WhatsApp &gt; Linked Devices &gt; Link with phone number and enter this code.</span>
+              </p>
+              <button type="button" id="btnCopyCode" class="btn-copy-code" disabled>
+                <i class="fas fa-copy"></i>
+                <span>Copy Code</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: WhatsApp Bot Guide (Requirement 10) -->
+    <section class="guides-wrapper-section" id="botGuide">
+      <div class="container">
+        <div class="guide-block-card">
+
+          <!-- Guide Header -->
+          <div class="guide-header-row">
+            <div class="guide-icon-badge theme-blue">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="guide-header-text">
+              <span class="guide-tag-badge text-gradient">Guide Part 01</span>
+              <h2 class="guide-title">WhatsApp Bot Guide: Architecture &amp; Pairing Walkthrough</h2>
+              <p class="guide-summary">
+                Learn how the WhatsApp Multi-Device (MD) pairing mechanism works with Baileys, how authentication keys are secured, and how to successfully link any custom WhatsApp bot without scanning a QR code with a camera.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step-by-Step Linking Flow -->
+          <h3 class="section-title" style="font-size: 1.4rem; margin-top: 10px;">
+            <i class="fas fa-list-ol text-gradient"></i> 4 Steps to Link Your WhatsApp Bot
+          </h3>
+          <div class="steps-timeline-grid">
+            <div class="step-card">
+              <div class="step-number-tag">1</div>
+              <h4 class="step-title">Generate Pairing Code</h4>
+              <p class="step-description">
+                Use the deployment panel above to select an active gateway server, enter your WhatsApp phone number with country code, and tap <strong>Generate Pairing Code</strong>.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-number-tag">2</div>
+              <h4 class="step-title">Open Linked Devices</h4>
+              <p class="step-description">
+                Launch WhatsApp on your mobile device. Go to <strong>Settings</strong> (or the three dots menu on Android) and select <strong>Linked Devices</strong>.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-number-tag">3</div>
+              <h4 class="step-title">Link with Phone Number</h4>
+              <p class="step-description">
+                Tap <strong>Link a Device</strong>. Instead of scanning a QR code with your camera, tap the bottom prompt: <strong>"Link with phone number instead"</strong>.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-number-tag">4</div>
+              <h4 class="step-title">Submit 8-Digit Code</h4>
+              <p class="step-description">
+                Enter the 8 characters provided by Ahmad Tech (e.g. <code>AHMD-7429</code>). Your bot node authenticates immediately and generates the <code>creds.json</code> session.
+              </p>
+            </div>
+          </div>
+
+          <!-- Security & Anti-Ban Notice Box -->
+          <div class="guide-alert-box alert-safety">
+            <i class="fas fa-shield-virus"></i>
+            <div>
+              <strong>Account Safety &amp; Anti-Ban Recommendation:</strong>
+              WhatsApp uses automated heuristics to flag spam patterns. When running an automated bot, always add a human jitter delay (1.5s - 3s) between broadcast messages, never send unsolicited mass direct messages to strangers, and keep your Baileys socket version up-to-date.
+            </div>
+          </div>
+
+          <!-- Backend Baileys Pairing Code Integration Snippet -->
+          <h3 class="section-title" style="font-size: 1.3rem; margin-top: 24px;">
+            <i class="fas fa-code text-gradient"></i> Baileys Pairing Code Implementation (Node.js)
+          </h3>
+          <p class="text-secondary" style="font-size: 0.92rem;">
+            When connecting your backend to Ahmad Tech's frontend, here is the clean reference Baileys socket initialization snippet for requesting an 8-digit code:
+          </p>
+
+          <div class="code-box-wrapper">
+            <div class="code-header-bar">
+              <div class="code-window-dots">
+                <span class="window-dot dot-red"></span>
+                <span class="window-dot dot-yellow"></span>
+                <span class="window-dot dot-green"></span>
+              </div>
+              <span>baileys-pairing-engine.js</span>
+              <button type="button" class="code-copy-btn" data-target="baileysSnippet">
+                <i class="fas fa-copy"></i> Copy Snippet
+              </button>
+            </div>
+            <pre class="code-content"><code id="baileysSnippet">import makeWASocket, { useMultiFileAuthState, delay } from "@whiskeysockets/baileys";
+import pino from "pino";
+
+async function startAhmadTechBot(targetPhoneNumber) {
+  const { state, saveCreds } = await useMultiFileAuthState("./auth_session");
+  
+  const sock = makeWASocket({
+    logger: pino({ level: "silent" }),
+    printQRInTerminal: false, // Disabled: using pairing code
+    auth: state,
+    browser: ["Ahmad Tech Hub", "Chrome", "20.0.04"]
+  });
+
+  // Check if session already authenticated
+  if (!sock.authState.creds.registered) {
+    // Sanitize phone number (digits only, e.g. 14155552671)
+    const cleanNumber = targetPhoneNumber.replace(/[^0-9]/g, "");
+    
+    // Request WhatsApp 8-digit pairing code
+    await delay(2000);
+    const code = await sock.requestPairingCode(cleanNumber);
+    console.log(`[Ahmad Tech] Your Pairing Code: ${code}`);
+    return code;
+  }
+
+  sock.ev.on("creds.update", saveCreds);
+  return null;
+}</code></pre>
+          </div>
+
+          <!-- Frequently Asked Troubleshooting Questions -->
+          <h3 class="section-title" style="font-size: 1.3rem; margin-top: 24px;">
+            <i class="fas fa-question-circle text-gradient"></i> Common Pairing Troubleshooting
+          </h3>
+          <div class="accordion-group">
+            <div class="accordion-item">
+              <button type="button" class="accordion-header" aria-expanded="false">
+                <span>Code expired or says "Couldn't link device" on WhatsApp?</span>
+                <i class="fas fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-content">
+                WhatsApp pairing codes expire in approximately 60 seconds for security. If the code expires, make sure your phone has a stable internet connection, ensure the country code in the input matches your phone's SIM country, and tap <strong>Generate New Code</strong>.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button type="button" class="accordion-header" aria-expanded="false">
+                <span>Where is the session saved after linking?</span>
+                <i class="fas fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-content">
+                Once paired, Baileys saves encrypted session tokens in your session directory (typically named <code>creds.json</code> or <code>session/</code>). Back up this file to maintain persistent connectivity without needing to re-pair.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button type="button" class="accordion-header" aria-expanded="false">
+                <span>Can I link multiple bots to the same phone number?</span>
+                <i class="fas fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-content">
+                WhatsApp Multi-Device allows up to 4 linked companion devices simultaneously per WhatsApp phone account. If you hit the limit, navigate to Linked Devices on your phone, log out of inactive sessions, and pair again.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: WhatsApp Mini Bot & MD Bot Guide (Requirement 10) -->
+    <section class="guides-wrapper-section" id="miniMdGuide" style="padding-top: 0;">
+      <div class="container">
+        <div class="guide-block-card">
+
+          <!-- Guide Header -->
+          <div class="guide-header-row">
+            <div class="guide-icon-badge theme-green">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <div class="guide-header-text">
+              <span class="guide-tag-badge text-gradient">Guide Part 02</span>
+              <h2 class="guide-title">WhatsApp Mini Bot &amp; WhatsApp MD Bot Complete Guide</h2>
+              <p class="guide-summary">
+                Understand the architectural differences between lightweight serverless Mini Bots and full Multi-Device (MD) bots. Explore core commands, deployment blueprints, and production server options.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mini Bot vs MD Bot Comparison Cards -->
+          <div class="comparison-cards-grid">
+            <div class="comparison-card">
+              <div class="comparison-header">
+                <span class="comp-badge mini">Lightweight</span>
+                <h3 style="font-size: 1.2rem; font-weight: 700;">WhatsApp Mini Bot</h3>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                Engineered for minimal footprint, serverless deployments (Cloudflare Workers, Vercel, Render free tier), and focused micro-tasks.
+              </p>
+              <ul>
+                <li><i class="fas fa-check"></i> RAM Footprint: ~45 MB - 90 MB</li>
+                <li><i class="fas fa-check"></i> Best for automated reply webhooks, notification relays, order alerts</li>
+                <li><i class="fas fa-check"></i> Fast cold start times under 800ms</li>
+                <li><i class="fas fa-times"></i> Limited video/audio FFmpeg transcoding</li>
+                <li><i class="fas fa-times"></i> Ephemeral storage requires external database for session</li>
+              </ul>
+            </div>
+
+            <div class="comparison-card highlight">
+              <div class="comparison-header">
+                <span class="comp-badge md">Full Multi-Device</span>
+                <h3 style="font-size: 1.2rem; font-weight: 700;">WhatsApp MD Bot (Full Stack)</h3>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                Complete multi-device bot ecosystem running a continuous Baileys WebSocket instance with media converters, AI engines, and group moderation tools.
+              </p>
+              <ul>
+                <li><i class="fas fa-check"></i> RAM Footprint: ~180 MB - 350 MB</li>
+                <li><i class="fas fa-check"></i> Full multimedia processing: stickers, audio memos, YouTube converters</li>
+                <li><i class="fas fa-check"></i> Persistent interactive group games, leveling, economy systems</li>
+                <li><i class="fas fa-check"></i> OpenAI / Gemini AI model integrations</li>
+                <li><i class="fas fa-check"></i> Ideal for 24/7 VPS, Docker containers, and dedicated hosting</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Essential MD Bot Commands Encyclopedia -->
+          <h3 class="section-title" style="font-size: 1.3rem; margin-top: 24px;">
+            <i class="fas fa-terminal text-gradient"></i> Core Commands Directory
+          </h3>
+          <p class="text-secondary" style="font-size: 0.92rem; margin-bottom: 16px;">
+            Here are the standard commands supported across modern WhatsApp MD and Mini Bot frameworks:
+          </p>
+
+          <div class="table-responsive-wrapper">
+            <table class="tech-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                  <th>Permission</th>
+                  <th>Syntax Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="cmd-badge">.menu</span> / <span class="cmd-badge">.help</span></td>
+                  <td>Displays all bot categories, runtime, active prefix, and help list.</td>
+                  <td><span class="role-badge role-all">All Users</span></td>
+                  <td><code>.menu</code></td>
+                </tr>
+                <tr>
+                  <td><span class="cmd-badge">.sticker</span> / <span class="cmd-badge">.s</span></td>
+                  <td>Converts image or video clip (under 10s) into an animated WhatsApp sticker.</td>
+                  <td><span class="role-badge role-all">All Users</span></td>
+                  <td><code>.s [reply to image]</code></td>
+                </tr>
+                <tr>
+                  <td><span class="cmd-badge">.tagall</span> / <span class="cmd-badge">.hidetag</span></td>
+                  <td>Mentions all members in the current WhatsApp group for announcements.</td>
+                  <td><span class="role-badge role-admin">Group Admin</span></td>
+                  <td><code>.tagall Meeting at 5 PM</code></td>
+                </tr>
+                <tr>
+                  <td><span class="cmd-badge">.ai</span> / <span class="cmd-badge">.gpt</span></td>
+                  <td>Queries LLM intelligence to answer questions or write code in chat.</td>
+                  <td><span class="role-badge role-all">All Users</span></td>
+                  <td><code>.ai Explain quantum physics</code></td>
+                </tr>
+                <tr>
+                  <td><span class="cmd-badge">.song</span> / <span class="cmd-badge">.ytmp3</span></td>
+                  <td>Downloads and sends an audio MP3 track from title or YouTube URL.</td>
+                  <td><span class="role-badge role-all">All Users</span></td>
+                  <td><code>.song shape of you</code></td>
+                </tr>
+                <tr>
+                  <td><span class="cmd-badge">.mute</span> / <span class="cmd-badge">.unmute</span></td>
+                  <td>Toggles group settings so only administrators can send messages.</td>
+                  <td><span class="role-badge role-admin">Group Admin</span></td>
+                  <td><code>.mute</code></td>
+                </tr>
+                <tr>
+                  <td><span class="cmd-badge">.restart</span> / <span class="cmd-badge">.update</span></td>
+                  <td>Pulls latest git commits and restarts the PM2 / Docker daemon.</td>
+                  <td><span class="role-badge role-owner">Bot Owner</span></td>
+                  <td><code>.restart</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Deployment Platforms Guide -->
+          <h3 class="section-title" style="font-size: 1.3rem; margin-top: 24px;">
+            <i class="fas fa-cloud-upload-alt text-gradient"></i> Where to Deploy Your Bot 24/7
+          </h3>
+          <div class="steps-timeline-grid">
+            <div class="step-card">
+              <div class="step-number-tag"><i class="fas fa-server"></i></div>
+              <h4 class="step-title">Linux VPS (Ubuntu / Debian)</h4>
+              <p class="step-description">
+                The gold standard for production bots. Run with <code>pm2 start index.js --name ahmad-bot</code> for auto-restart on crashes and reboots.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-number-tag"><i class="fab fa-docker"></i></div>
+              <h4 class="step-title">Docker Container</h4>
+              <p class="step-description">
+                Containerize your bot with Node.js LTS and FFmpeg pre-installed. Easily deployable to Koyeb, Railway, AWS ECS, or Portainer.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-number-tag"><i class="fas fa-mobile-alt"></i></div>
+              <h4 class="step-title">Android Termux</h4>
+              <p class="step-description">
+                Run directly on an Android smartphone without paying for hosting. Install Node.js, git, and FFmpeg via <code>pkg install</code>.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-number-tag"><i class="fas fa-laptop-code"></i></div>
+              <h4 class="step-title">Local Development</h4>
+              <p class="step-description">
+                Run locally on Windows, macOS, or Linux using Node.js v18+. Ideal for developing custom features and testing commands.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Cloud Infrastructure & Security (Requirement 2 & 12) -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Ahmad Tech Architecture</span>
+          <h2 class="section-title">Built for Reliability, Speed &amp; Developer Freedom</h2>
+          <p class="section-desc">
+            Engineered with modern web standards, strict separation of concerns, and carrier-grade server clusters.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3 class="feature-title">Multi-Node Cluster</h3>
+            <p class="feature-text">
+              Distribute pairing requests across US, European, and Asian routing nodes to avoid regional rate limits and latency spikes.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fas fa-camera-slash"></i>
+            </div>
+            <h3 class="feature-title">Zero QR Camera Scan</h3>
+            <p class="feature-text">
+              Eliminate blurry webcam scanning. Link directly through phone number authentication codes supported by all modern WhatsApp builds.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fas fa-plug"></i>
+            </div>
+            <h3 class="feature-title">Decoupled API Layer</h3>
+            <p class="feature-text">
+              Frontend and backend are strictly separated. Easily connect your own Node.js, Python, or Go microservice backend whenever you are ready.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h3 class="feature-title">Client-Side Privacy</h3>
+            <p class="feature-text">
+              Your credentials and pairing sessions remain private. Tokens are transferred via end-to-end encrypted protocol directly to your bot instance.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <h3 class="feature-title">Built-in Rate Limiting</h3>
+            <p class="feature-text">
+              Intelligent cooldown timers and payload validation prevent gateway flooding and preserve bot IP reputation.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fas fa-mobile"></i>
+            </div>
+            <h3 class="feature-title">100% Mobile Responsive</h3>
+            <p class="feature-text">
+              Optimized down to pixel perfection across iPhones, Android devices, tablets, and wide 4K displays.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FAQ -->
+    <section class="guides-wrapper-section" id="faq" style="padding-top: 0;">
+      <div class="container">
+        <div class="guide-block-card">
+          <div class="section-head" style="margin-bottom: 24px;">
+            <span class="section-tag">Help &amp; Support</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+          </div>
+
+          <div class="accordion-group">
+            <div class="accordion-item">
+              <button type="button" class="accordion-header" aria-expanded="false">
+                <span>Is Ahmad Tech free to use for pairing my bot?</span>
+                <i class="fas fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-content">
+                Yes! Ahmad Tech provides public pairing gateway tools and documentation free of charge for the open-source bot developer community.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button type="button" class="accordion-header" aria-expanded="false">
+                <span>How do I connect my own backend server to this frontend?</span>
+                <i class="fas fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-content">
+                Open <code>assets/js/config.js</code> and update <code>backend.useMock</code> to <code>false</code> and specify your API domain in <code>backend.apiBaseUrl</code>. The frontend will automatically post JSON requests to your <code>/api/pair</code> endpoint.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button type="button" class="accordion-header" aria-expanded="false">
+                <span>Does generating a pairing code require my phone to be on the same Wi-Fi?</span>
+                <i class="fas fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-content">
+                No. WhatsApp Multi-Device connects through WhatsApp cloud relay servers, so your phone and server can be on completely different cellular or broadband networks worldwide.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Server Selection Modal (Requirement 5) -->
+  <div class="server-modal-backdrop" id="serverModal" role="dialog" aria-modal="true" aria-labelledby="serverModalTitle">
+    <div class="server-modal-card">
+      <div class="server-modal-header">
+        <h3 class="server-modal-title" id="serverModalTitle">
+          <i class="fas fa-server text-gradient"></i> Select Gateway Server Node
+        </h3>
+        <button type="button" class="btn-close-modal" id="closeServerModal" aria-label="Close server selector">&times;</button>
+      </div>
+
+      <div class="server-list-container" id="serverListContainer">
+        <!-- Dynamically rendered by pairing-panel.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Hub -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Professional Footer (Requirement 11) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-wrap" style="margin-bottom: 12px;">
+            <img src="assets/images/logo.svg" alt="Ahmad Tech Logo" style="height: 38px;">
+          </a>
+          <p>
+            Ahmad Tech is the premier open gateway for WhatsApp Bot pairing, Baileys multi-device infrastructure, and automated workflow deployment.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://whatsapp.com/channel/ahmadtech" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Ahmad Tech WhatsApp Channel">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://t.me/ahmadtech_official" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Ahmad Tech Telegram">
+              <i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="https://github.com/ahmadtech-site" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Ahmad Tech GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://youtube.com/@ahmadtech" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Ahmad Tech YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Deployment -->
+        <div>
+          <h4 class="footer-col-title">Deployment</h4>
+          <ul class="footer-link-list">
+            <li><a href="#pairingPanel">Pairing Console</a></li>
+            <li><a href="#pairingPanel" onclick="document.getElementById('btnChangeServer')?.click()">Server Clusters</a></li>
+            <li><a href="bot-guide.html">WhatsApp Bot Guide</a></li>
+            <li><a href="mini-md-guide.html">Mini &amp; MD Bot Guide</a></li>
+            <li><a href="#features">Cluster Health</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Guides & Docs -->
+        <div>
+          <h4 class="footer-col-title">Documentation</h4>
+          <ul class="footer-link-list">
+            <li><a href="bot-guide.html#baileysSetup">Baileys Setup</a></li>
+            <li><a href="mini-md-guide.html#commands">Commands Encyclopedia</a></li>
+            <li><a href="bot-guide.html#antiban">Anti-Ban Best Practices</a></li>
+            <li><a href="mini-md-guide.html#vps">VPS Deployment</a></li>
+            <li><a href="mini-md-guide.html#docker">Docker Guide</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Platform & Legal -->
+        <div>
+          <h4 class="footer-col-title">Platform</h4>
+          <ul class="footer-link-list">
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#topHeader">Back to Top</a></li>
+            <li><a href="mailto:support@ahmadtech.site">Developer Contact</a></li>
+            <li><span style="color: var(--text-muted); font-size: 0.88rem;">Domain: ahmadtech.site</span></li>
+            <li><span style="color: var(--text-muted); font-size: 0.88rem;">Version: 2.4.0 (Stable)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Legal Disclaimer -->
+      <div class="footer-disclaimer-card">
+        <strong>Disclaimer:</strong> Ahmad Tech (ahmadtech.site) is an independent open-source developer resource and deployment utility. We are not endorsed by, directly affiliated with, maintained, authorized, or sponsored by WhatsApp LLC, Meta Platforms, Inc., or any of their affiliates. The official WhatsApp website can be found at <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">whatsapp.com</a>. All product and company names are registered trademarks of their respective owners.
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-row">
+        <div>
+          &copy; 2026 <strong>Ahmad Tech</strong> (ahmadtech.site). All rights reserved.
+        </div>
+        <div class="footer-status-pill">
+          <span class="pulse-dot"></span>
+          <span>All 4 Server Clusters Operational (100%)</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api-client.js"></script>
+  <script src="assets/js/pairing-panel.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

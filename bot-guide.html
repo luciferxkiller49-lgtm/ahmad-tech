@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  
+  <title>WhatsApp Bot Architecture &amp; Pairing Guide | Ahmad Tech</title>
+  <meta name="title" content="WhatsApp Bot Architecture &amp; Pairing Guide | Ahmad Tech">
+  <meta name="description" content="Master WhatsApp Bot engineering: step-by-step pairing tutorial, Baileys MD socket handling, session management, anti-ban protection, and troubleshooting.">
+  <meta name="keywords" content="WhatsApp Bot Guide, Baileys WhatsApp Bot, WhatsApp Pairing Code, Multi-Device WhatsApp, Node.js WhatsApp Bot, creds.json, Bot Anti-ban, Ahmad Tech">
+  <meta name="author" content="Ahmad Tech">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ahmadtech.site/bot-guide.html">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ahmadtech.site/bot-guide.html">
+  <meta property="og:title" content="WhatsApp Bot Architecture &amp; Pairing Guide | Ahmad Tech">
+  <meta property="og:description" content="In-depth guide to pairing WhatsApp Bots without QR code scanning, session security, and anti-ban engineering.">
+  <meta property="og:image" content="https://ahmadtech.site/assets/images/og-banner.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/guides.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="topHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrap" aria-label="Ahmad Tech Home">
+        <img src="assets/images/logo.svg" alt="Ahmad Tech Logo" class="brand-logo-img">
+        <span class="brand-badge"><span class="pulse-dot"></span> Node Mesh 99.9%</span>
+      </a>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary Site Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#pairingPanel" class="nav-link">Deployment Panel</a>
+        <a href="bot-guide.html" class="nav-link active">WhatsApp Bot Guide</a>
+        <a href="mini-md-guide.html" class="nav-link">Mini &amp; MD Bot Guide</a>
+        <a href="index.html#features" class="nav-link">Infrastructure</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Switch theme mode">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="index.html#pairingPanel" class="btn-header-cta">
+          <i class="fas fa-key"></i>
+          <span>Get Pair Code</span>
+        </a>
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation drawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="guides-wrapper-section">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px;">
+        <a href="index.html">Home</a> &gt; <span style="color: var(--text-primary);">WhatsApp Bot Guide</span>
+      </div>
+
+      <div class="guide-block-card">
+        <!-- Title & Hero -->
+        <div class="guide-header-row">
+          <div class="guide-icon-badge theme-blue">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="guide-header-text">
+            <span class="guide-tag-badge text-gradient">Comprehensive Developer Manual</span>
+            <h1 class="guide-title">WhatsApp Bot Guide: Architecture, Pairing &amp; Security</h1>
+            <p class="guide-summary">
+              A comprehensive technical guide to building, connecting, and maintaining production-grade WhatsApp bots using the modern multi-device protocol and pairing codes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 1: How Pairing Code Works -->
+        <h2 class="section-title" id="howItWorks" style="font-size: 1.5rem; margin-top: 30px;">
+          1. The Mechanism Behind WhatsApp Pairing Codes
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">
+          Historically, WhatsApp bot frameworks required displaying an ASCII or image QR code in a terminal or web page, forcing developers to physically point their smartphone camera at a screen. WhatsApp's Multi-Device (MD) authentication introduced <strong>Companion Device Pairing via OTP/Code</strong>.
+        </p>
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+          In this workflow, the bot initializes a secure Baileys WebSocket connection and requests an ephemeral 8-character verification token directly linked to your phone number. You enter the 8 characters into your official WhatsApp mobile app under <em>Linked Devices</em>. Once submitted, the cryptographic keys (Curve25519) are exchanged and saved in your bot's authentication directory.
+        </p>
+
+        <!-- Linking Steps Grid -->
+        <h3 class="section-title" id="linkingSteps" style="font-size: 1.3rem; margin-top: 24px;">
+          <i class="fas fa-mobile-alt text-gradient"></i> Detailed Step-by-Step Linking Instructions
+        </h3>
+        <div class="steps-timeline-grid">
+          <div class="step-card">
+            <div class="step-number-tag">01</div>
+            <h4 class="step-title">Enter Target Number</h4>
+            <p class="step-description">
+              Go to the <a href="index.html#pairingPanel">Ahmad Tech Pairing Console</a>. Select your preferred node, choose your country dialing prefix, enter your phone number, and tap <strong>Generate Pairing Code</strong>.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number-tag">02</div>
+            <h4 class="step-title">Open WhatsApp App</h4>
+            <p class="step-description">
+              Open WhatsApp on your primary phone. On Android, tap the three dots in the top right; on iOS, tap the bottom right <strong>Settings</strong> cog. Select <strong>Linked Devices</strong>.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number-tag">03</div>
+            <h4 class="step-title">Select Phone Option</h4>
+            <p class="step-description">
+              Tap <strong>Link a Device</strong>. When the camera QR scanner appears, locate and tap <strong>"Link with phone number instead"</strong> at the bottom of the screen.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number-tag">04</div>
+            <h4 class="step-title">Input 8 Digits</h4>
+            <p class="step-description">
+              Enter the 8 characters provided by Ahmad Tech (e.g. <code>AHMD-7829</code>). Your bot console will show an active connection within 3 to 5 seconds.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 2: Session Security & creds.json -->
+        <h2 class="section-title" id="sessionSecurity" style="font-size: 1.5rem; margin-top: 40px;">
+          2. Session Management &amp; Creds Preservation
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">
+          When authentication succeeds, your bot generates an encrypted credentials file known as <code>creds.json</code>. This file stores:
+        </p>
+        <ul style="color: var(--text-secondary); margin-left: 24px; margin-bottom: 20px; line-height: 1.8;">
+          <li><strong>Noise Key Pair:</strong> Used to establish encrypted transport over WebSockets.</li>
+          <li><strong>Signed Identity Key:</strong> Proof of identity associated with your WhatsApp JID.</li>
+          <li><strong>Registration ID &amp; AdvSecret:</strong> WhatsApp multi-device security tokens.</li>
+          <li><strong>Pre-Keys:</strong> One-time keys for end-to-end signal message decryption.</li>
+        </ul>
+
+        <div class="guide-alert-box alert-safety">
+          <i class="fas fa-exclamation-triangle"></i>
+          <div>
+            <strong>Never Share Your Session File:</strong> Whoever controls your <code>creds.json</code> has full companion device access to send and receive messages from your WhatsApp account. Never commit this file to public GitHub repositories!
+          </div>
+        </div>
+
+        <!-- Section 3: Anti-Ban Guidelines -->
+        <h2 class="section-title" id="antiban" style="font-size: 1.5rem; margin-top: 40px;">
+          3. Anti-Ban Engineering &amp; Operational Safety
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">
+          WhatsApp monitors accounts for irregular behavior that violates their terms of service. Follow these strict engineering principles to safeguard your bot phone number:
+        </p>
+
+        <div class="comparison-cards-grid">
+          <div class="comparison-card">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 12px;">
+              <i class="fas fa-check-circle"></i> Recommended Best Practices
+            </h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Add a random typing delay (1.5s - 3s) before sending responses.</li>
+              <li><i class="fas fa-check"></i> Set command cooldowns so users cannot spam trigger functions.</li>
+              <li><i class="fas fa-check"></i> Use simulated browser credentials: <code>["Ahmad Tech", "Desktop", "1.0"]</code>.</li>
+              <li><i class="fas fa-check"></i> Keep your bot mostly in private groups or opt-in direct chats.</li>
+              <li><i class="fas fa-check"></i> Regularly update to the newest <code>@whiskeysockets/baileys</code> patch.</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-rose); margin-bottom: 12px;">
+              <i class="fas fa-times-circle"></i> High-Risk Actions (Avoid)
+            </h3>
+            <ul>
+              <li><i class="fas fa-times"></i> Sending unrequested broadcast messages to unfamiliar contacts.</li>
+              <li><i class="fas fa-times"></i> Adding hundreds of users to new groups without their consent.</li>
+              <li><i class="fas fa-times"></i> Firing dozens of simultaneous messages in a fraction of a second.</li>
+              <li><i class="fas fa-times"></i> Using brand new SIM cards without any prior organic chat history.</li>
+              <li><i class="fas fa-times"></i> Scraping contact profile pictures or phone numbers en masse.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Section 4: Socket Error Code Reference -->
+        <h2 class="section-title" id="errorCodeReference" style="font-size: 1.5rem; margin-top: 40px;">
+          4. WhatsApp Socket Error Code Reference Table
+        </h2>
+        <div class="table-responsive-wrapper">
+          <table class="tech-table">
+            <thead>
+              <tr>
+                <th>Error Code / Status</th>
+                <th>Meaning</th>
+                <th>Recommended Resolution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="cmd-badge">DisconnectReason.loggedOut (401)</span></td>
+                <td>Device was unlinked from WhatsApp mobile app or invalidated.</td>
+                <td>Delete the local <code>creds.json</code> session and generate a new pairing code.</td>
+              </tr>
+              <tr>
+                <td><span class="cmd-badge">DisconnectReason.restartRequired (515)</span></td>
+                <td>WhatsApp server closed stream for state synchronization.</td>
+                <td>Instantly reconnect the socket without deleting credentials.</td>
+              </tr>
+              <tr>
+                <td><span class="cmd-badge">DisconnectReason.timedOut (408)</span></td>
+                <td>Network packet loss or gateway ping timeout.</td>
+                <td>Retry connection after 5 seconds with exponential backoff.</td>
+              </tr>
+              <tr>
+                <td><span class="cmd-badge">DisconnectReason.connectionClosed (428)</span></td>
+                <td>WebSocket channel terminated cleanly by host.</td>
+                <td>Re-initialize socket; verify server has active internet route.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Call to Action Banner -->
+        <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-medium); border-radius: var(--radius-lg); padding: 24px; text-align: center; margin-top: 40px;">
+          <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">Ready to Pair Your WhatsApp Bot?</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 18px;">
+            Deploy your pairing session in seconds using the Ahmad Tech deployment console.
+          </p>
+          <a href="index.html#pairingPanel" class="btn-header-cta" style="display: inline-flex;">
+            <i class="fas fa-key"></i> Launch Pairing Console
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom-row" style="border-top: none; padding-top: 0;">
+        <div>
+          &copy; 2026 <strong>Ahmad Tech</strong> (ahmadtech.site). All rights reserved.
+        </div>
+        <div class="footer-status-pill">
+          <a href="index.html">Back to Home</a> • <a href="mini-md-guide.html">Mini &amp; MD Bot Guide</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

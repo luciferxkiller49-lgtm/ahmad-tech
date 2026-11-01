@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  
+  <title>WhatsApp Mini Bot &amp; MD Bot Guide | Ahmad Tech</title>
+  <meta name="title" content="WhatsApp Mini Bot &amp; MD Bot Guide | Ahmad Tech">
+  <meta name="description" content="Complete documentation for WhatsApp Mini Bots and Multi-Device (MD) Bots: full commands list, VPS deployment, Docker, Termux, and architectural differences.">
+  <meta name="keywords" content="WhatsApp Mini Bot, WhatsApp MD Bot, Bot Commands, Baileys MD, WhatsApp VPS Deployment, Termux Bot, Docker WhatsApp, Ahmad Tech">
+  <meta name="author" content="Ahmad Tech">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ahmadtech.site/mini-md-guide.html">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ahmadtech.site/mini-md-guide.html">
+  <meta property="og:title" content="WhatsApp Mini Bot &amp; MD Bot Guide | Ahmad Tech">
+  <meta property="og:description" content="Learn the differences between Mini Bots and Multi-Device Bots, explore 25+ essential commands, and deploy 24/7 on VPS, Docker, or Termux.">
+  <meta property="og:image" content="https://ahmadtech.site/assets/images/og-banner.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/guides.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="topHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrap" aria-label="Ahmad Tech Home">
+        <img src="assets/images/logo.svg" alt="Ahmad Tech Logo" class="brand-logo-img">
+        <span class="brand-badge"><span class="pulse-dot"></span> Node Mesh 99.9%</span>
+      </a>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary Site Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#pairingPanel" class="nav-link">Deployment Panel</a>
+        <a href="bot-guide.html" class="nav-link">WhatsApp Bot Guide</a>
+        <a href="mini-md-guide.html" class="nav-link active">Mini &amp; MD Bot Guide</a>
+        <a href="index.html#features" class="nav-link">Infrastructure</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Switch theme mode">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="index.html#pairingPanel" class="btn-header-cta">
+          <i class="fas fa-key"></i>
+          <span>Get Pair Code</span>
+        </a>
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation drawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="guides-wrapper-section">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px;">
+        <a href="index.html">Home</a> &gt; <span style="color: var(--text-primary);">Mini Bot &amp; MD Bot Guide</span>
+      </div>
+
+      <div class="guide-block-card">
+        <!-- Title & Hero -->
+        <div class="guide-header-row">
+          <div class="guide-icon-badge theme-green">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <div class="guide-header-text">
+            <span class="guide-tag-badge text-gradient">Framework &amp; Deployment Manual</span>
+            <h1 class="guide-title">WhatsApp Mini Bot &amp; WhatsApp MD Bot Complete Guide</h1>
+            <p class="guide-summary">
+              Explore the architectural paradigms of WhatsApp bots: from ultra-lightweight serverless Mini Bots to full-featured Multi-Device MD bots with complete commands directory and 24/7 cloud deployment guides.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 1: Architecture Comparison -->
+        <h2 class="section-title" id="architectureComparison" style="font-size: 1.5rem; margin-top: 30px;">
+          1. Architectural Comparison: Mini Bot vs. Multi-Device (MD) Bot
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+          Choosing the right architecture depends on your hardware budget, expected message throughput, and feature requirements:
+        </p>
+
+        <div class="table-responsive-wrapper">
+          <table class="tech-table">
+            <thead>
+              <tr>
+                <th>Feature / Metric</th>
+                <th>WhatsApp Mini Bot</th>
+                <th>WhatsApp MD Bot (Standard)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary Objective</strong></td>
+                <td>Lightweight alerts, notifications, simple keyword auto-responder</td>
+                <td>Full group moderation, AI chatbot, multimedia downloads &amp; plugins</td>
+              </tr>
+              <tr>
+                <td><strong>RAM Consumption</strong></td>
+                <td><span class="role-badge role-all">40 MB – 80 MB</span></td>
+                <td><span class="role-badge role-owner">180 MB – 450 MB</span></td>
+              </tr>
+              <tr>
+                <td><strong>Socket Lifecycle</strong></td>
+                <td>Lazy-loaded or edge function with external session store</td>
+                <td>Persistent long-running WebSocket daemon</td>
+              </tr>
+              <tr>
+                <td><strong>Media Processing</strong></td>
+                <td>Basic image relay (no local video transcoding)</td>
+                <td>Full FFmpeg suite (stickers, audio compression, video filters)</td>
+              </tr>
+              <tr>
+                <td><strong>Recommended Host</strong></td>
+                <td>Free tier cloud, Vercel / Render, Raspberry Pi, Termux</td>
+                <td>Dedicated VPS (Ubuntu), Docker Container, AWS Lightsail</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 2: Command Dictionary -->
+        <h2 class="section-title" id="commands" style="font-size: 1.5rem; margin-top: 40px;">
+          2. Complete Commands Directory &amp; Usage
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">
+          Below is the standardized command set implemented by modern Baileys bots:
+        </p>
+
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-cyan); margin: 20px 0 10px;">
+          <i class="fas fa-shield-alt"></i> Administration &amp; Moderation
+        </h3>
+        <div class="table-responsive-wrapper">
+          <table class="tech-table">
+            <thead>
+              <tr>
+                <th>Command</th>
+                <th>Action</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="cmd-badge">.kick @user</span></td>
+                <td>Removes a member from the group.</td>
+                <td><code>.kick @923001234567</code></td>
+              </tr>
+              <tr>
+                <td><span class="cmd-badge">.add phone_number</span></td>
+                <td>Adds a user to the group directly or generates an invite link.</td>
+                <td><code>.add 14155552671</code></td>
+              </tr>
+              <tr>
+                <td><span class="cmd-badge">.tagall [text]</span></td>
+                <td>Mentions all group members with a customized announcement.</td>
+                <td><code>.tagall Game night starts in 10 minutes!</code></td>
+              </tr>
+              <tr>
+                <td><span class="cmd-badge">.mute / .unmute</span></td>
+                <td>Locks/unlocks group so only admins can send messages.</td>
+                <td><code>.mute</code></td>
+              </tr>
+              <tr>
+                <td><span class="cmd-badge">.warn @user</span></td>
+                <td>Issues a warning strike; kicks automatically at 3 strikes.</td>
+                <td><code>.warn @user No spamming links</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin: 28px 0 10px;">
+          <i class="fas fa-magic"></i> AI &amp; Smart Tools
+        </h3>
+        <div class="table-responsive-wrapper">
+          <table class="tech-table">
+            <thead>
+              <tr>
+                <th>Command</th>
+                <th>Action</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="cmd-badge">.ai [prompt]</span></td>
+                <td>Answers questions or explains code via LLM intelligence.</td>
+                <td><code>.ai Write a python script to parse CSV files</code></td>
+              </tr>
+              <tr>
+                <td><span class="cmd-badge">.dalle [prompt]</span></td>
+                <td>Generates a photorealistic AI image and sends as JPEG.</td>
+                <td><code>.dalle Cyberpunk city in neon rain</code></td>
+              </tr>
+              <tr>
+                <td><span class="cmd-badge">.translate [code]</span></td>
+                <td>Translates quoted message into the target language.</td>
+                <td><code>.translate es Hello friend</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 3: 24/7 Cloud Deployment Guides -->
+        <h2 class="section-title" id="deploymentGuide" style="font-size: 1.5rem; margin-top: 40px;">
+          3. 24/7 Production Deployment Walkthrough
+        </h2>
+
+        <!-- VPS Guide -->
+        <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin: 20px 0 10px;" id="vps">
+          Method A: Ubuntu VPS with Node.js &amp; PM2 (Recommended)
+        </h3>
+        <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.92rem;">
+          PM2 is a production process manager that automatically restarts your bot if it crashes or when the server reboots.
+        </p>
+
+        <div class="code-box-wrapper">
+          <div class="code-header-bar">
+            <span>Terminal Commands (Ubuntu 22.04 / 24.04)</span>
+            <button type="button" class="code-copy-btn" data-target="vpsCommands">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+          <pre class="code-content"><code id="vpsCommands"># 1. Update system packages
+sudo apt update && sudo apt upgrade -y
+
+# 2. Install Node.js LTS (v20) and FFmpeg
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs ffmpeg git
+
+# 3. Clone your bot repository
+git clone https://github.com/your-username/my-whatsapp-bot.git
+cd my-whatsapp-bot
+
+# 4. Install dependencies
+npm install
+
+# 5. Install PM2 globally and start bot daemon
+sudo npm install -g pm2
+pm2 start index.js --name "ahmad-bot"
+pm2 save
+pm2 startup</code></pre>
+        </div>
+
+        <!-- Docker Guide -->
+        <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin: 28px 0 10px;" id="docker">
+          Method B: Docker &amp; Docker Compose
+        </h3>
+        <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.92rem;">
+          Run in an isolated container with all system dependencies pre-configured:
+        </p>
+
+        <div class="code-box-wrapper">
+          <div class="code-header-bar">
+            <span>Dockerfile</span>
+            <button type="button" class="code-copy-btn" data-target="dockerSnippet">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+          <pre class="code-content"><code id="dockerSnippet">FROM node:20-bullseye-slim
+
+# Install system dependencies & FFmpeg
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    imagemagick \
+    webp \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --production
+
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]</code></pre>
+        </div>
+
+        <!-- Termux Guide -->
+        <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin: 28px 0 10px;" id="termux">
+          Method C: Android Termux (No PC Required)
+        </h3>
+        <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.92rem;">
+          Run your bot directly from an Android phone:
+        </p>
+
+        <div class="code-box-wrapper">
+          <div class="code-header-bar">
+            <span>Termux Commands</span>
+            <button type="button" class="code-copy-btn" data-target="termuxCommands">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+          <pre class="code-content"><code id="termuxCommands">pkg update && pkg upgrade -y
+pkg install nodejs git ffmpeg -y
+git clone https://github.com/your-username/my-whatsapp-bot.git
+cd my-whatsapp-bot
+npm install
+node index.js</code></pre>
+        </div>
+
+        <!-- Section 4: Performance & Memory Optimization -->
+        <h2 class="section-title" id="performance" style="font-size: 1.5rem; margin-top: 40px;">
+          4. Performance Tuning &amp; Memory Management
+        </h2>
+        <div class="guide-alert-box alert-success">
+          <i class="fas fa-tachometer-alt"></i>
+          <div>
+            <strong>Memory Leak Prevention Tip:</strong> Baileys stores recent messages in memory to compute encryption pre-keys. For bots participating in active groups with thousands of daily messages, enable periodic garbage collection:
+            <br>
+            <code>node --expose-gc --max-old-space-size=512 index.js</code>
+            <br>
+            Configure your message store to retain only the last 50 messages per chat to prevent Out-Of-Memory (OOM) shutdowns.
+          </div>
+        </div>
+
+        <!-- Call to Action Banner -->
+        <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-medium); border-radius: var(--radius-lg); padding: 24px; text-align: center; margin-top: 40px;">
+          <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">Connect Your Bot to the Gateway</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 18px;">
+            Get your instant 8-character verification token using our high-speed pairing console.
+          </p>
+          <a href="index.html#pairingPanel" class="btn-header-cta" style="display: inline-flex;">
+            <i class="fas fa-key"></i> Go to Pairing Console
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom-row" style="border-top: none; padding-top: 0;">
+        <div>
+          &copy; 2026 <strong>Ahmad Tech</strong> (ahmadtech.site). All rights reserved.
+        </div>
+        <div class="footer-status-pill">
+          <a href="index.html">Back to Home</a> • <a href="bot-guide.html">WhatsApp Bot Guide</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

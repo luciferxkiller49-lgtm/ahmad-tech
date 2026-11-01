@@ -1,0 +1,8 @@
+# Ahmad Tech robots.txt
+# Domain: ahmadtech.site
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ahmadtech.site/sitemap.xml

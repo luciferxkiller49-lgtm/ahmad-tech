@@ -1,0 +1,445 @@
+/**
+ * Ahmad Tech - Guide Sections Styling
+ * Complete formatting for WhatsApp Bot Guide & Mini/MD Bot Guide
+ */
+
+.guides-wrapper-section {
+  padding: 60px 0;
+}
+
+.guide-block-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: clamp(24px, 4vw, 40px);
+  margin-bottom: 50px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: var(--transition);
+}
+
+.guide-block-card:hover {
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.guide-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.guide-icon-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.guide-icon-badge.theme-blue {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.guide-icon-badge.theme-green {
+  background: rgba(37, 211, 102, 0.12);
+  color: var(--accent-whatsapp);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+}
+
+.guide-header-text {
+  flex: 1;
+}
+
+.guide-tag-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.guide-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.guide-summary {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Steps Flow Grid */
+.steps-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.step-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.step-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-focus);
+}
+
+.step-number-tag {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-brand);
+  color: #070B14;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.step-description {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Comparison Tables */
+.table-responsive-wrapper {
+  overflow-x: auto;
+  margin: 24px 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+}
+
+.tech-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.tech-table th, .tech-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tech-table th {
+  background: var(--bg-surface-elevated);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.8px;
+}
+
+.tech-table tr:last-child td {
+  border-bottom: none;
+}
+
+.tech-table tr:hover td {
+  background: rgba(56, 189, 248, 0.04);
+}
+
+.cmd-badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.role-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.role-admin { background: rgba(244, 63, 94, 0.15); color: var(--accent-rose); }
+.role-all { background: rgba(34, 197, 94, 0.15); color: var(--accent-green); }
+.role-owner { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
+
+/* Code Blocks / Terminal */
+.code-box-wrapper {
+  background: #060911;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.code-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #0B101D;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.code-window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.window-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+
+.code-copy-btn {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.code-copy-btn:hover {
+  color: var(--accent-cyan);
+}
+
+.code-content {
+  padding: 16px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #E2E8F0;
+  overflow-x: auto;
+}
+
+/* Callout / Security Alert Boxes */
+.guide-alert-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 22px;
+  border-radius: var(--radius-md);
+  margin: 24px 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.guide-alert-box.alert-safety {
+  background: rgba(245, 158, 11, 0.08);
+  border-left: 4px solid var(--accent-amber);
+  color: var(--text-primary);
+}
+
+.guide-alert-box.alert-safety i {
+  color: var(--accent-amber);
+  font-size: 1.3rem;
+  margin-top: 2px;
+}
+
+.guide-alert-box.alert-success {
+  background: rgba(34, 197, 94, 0.08);
+  border-left: 4px solid var(--accent-green);
+  color: var(--text-primary);
+}
+
+.guide-alert-box.alert-success i {
+  color: var(--accent-green);
+  font-size: 1.3rem;
+  margin-top: 2px;
+}
+
+/* Accordion Component */
+.accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.accordion-item {
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.accordion-item.active {
+  border-color: var(--border-focus);
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: left;
+  transition: var(--transition);
+}
+
+.accordion-header:hover {
+  color: var(--accent-cyan);
+}
+
+.accordion-chevron {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: transform 0.25s ease;
+}
+
+.accordion-item.active .accordion-chevron {
+  transform: rotate(180deg);
+  color: var(--accent-cyan);
+}
+
+.accordion-content {
+  display: none;
+  padding: 0 20px 20px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 4px;
+  padding-top: 16px;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mini vs MD Grid */
+.comparison-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 28px 0;
+}
+
+.comparison-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: var(--transition);
+}
+
+.comparison-card.highlight {
+  border-color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.04);
+}
+
+.comparison-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.comp-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.comp-badge.mini {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-amber);
+}
+
+.comp-badge.md {
+  background: rgba(37, 211, 102, 0.15);
+  color: var(--accent-whatsapp);
+}
+
+.comparison-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.comparison-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.comparison-card li i {
+  margin-top: 3px;
+  font-size: 0.8rem;
+}
+
+.comparison-card li i.fa-check { color: var(--accent-green); }
+.comparison-card li i.fa-times { color: var(--accent-rose); }
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .steps-timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .comparison-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .steps-timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-header-row {
+    flex-direction: column;
+  }
+}

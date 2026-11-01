@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" fill="none">
+  <defs>
+    <radialGradient id="ogGlow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#0B0F19" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#050811" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#4FACFE"/>
+    </linearGradient>
+    <linearGradient id="waGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#25D366"/>
+      <stop offset="100%" stop-color="#128C7E"/>
+    </linearGradient>
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.8" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0A0F1D"/>
+  <rect width="1200" height="630" fill="url(#ogGlow)"/>
+  <rect width="1200" height="630" fill="url(#gridPattern)"/>
+
+  <!-- Center Badge -->
+  <g transform="translate(600, 150)">
+    <circle cx="0" cy="0" r="60" fill="#0F172A" stroke="url(#textGrad)" stroke-width="4"/>
+    <path d="M0 -30 L26 -15 L26 15 L0 30 L-26 15 L-26 -15 Z" fill="#1E293B" stroke="url(#textGrad)" stroke-width="2"/>
+    <circle cx="0" cy="-6" r="6" fill="url(#waGrad)"/>
+    <path d="M-10 8 L0 0 L10 8 L0 16 Z" fill="url(#textGrad)"/>
+  </g>
+
+  <!-- Titles -->
+  <text x="600" y="270" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="52" fill="#FFFFFF" letter-spacing="-1">
+    AHMAD <tspan fill="url(#textGrad)">TECH</tspan>
+  </text>
+  <text x="600" y="325" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="28" fill="#E2E8F0">
+    WhatsApp Bot Pairing Code Deployment Panel
+  </text>
+  <text x="600" y="375" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="400" font-size="20" fill="#94A3B8">
+    High-Speed Multi-Server Infrastructure • Mini Bot &amp; MD Bot Architecture • Zero-Configuration
+  </text>
+
+  <!-- Domain Pill -->
+  <g transform="translate(460, 430)">
+    <rect width="280" height="48" rx="24" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="28" cy="24" r="6" fill="#22C55E"/>
+    <text x="145" y="31" text-anchor="middle" font-family="'Inter', monospace" font-weight="600" font-size="16" fill="#00F2FE">
+      ahmadtech.site
+    </text>
+  </g>
+</svg>

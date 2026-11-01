@@ -1,0 +1,20 @@
+{
+  "name": "ahmad-tech",
+  "version": "1.0.0",
+  "description": "Professional WhatsApp Bot Pairing Code Gateway & MD Bot Documentation Hub",
+  "main": "index.html",
+  "scripts": {
+    "start": "node serve.js",
+    "serve": "node serve.js"
+  },
+  "keywords": [
+    "whatsapp-bot",
+    "pairing-code",
+    "baileys",
+    "ahmad-tech",
+    "mini-bot",
+    "md-bot"
+  ],
+  "author": "Ahmad Tech",
+  "license": "MIT"
+}
